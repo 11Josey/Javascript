@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .toTop {
+            position: fixed;
+            right:10px;
+            bottom:100px;
+            width: 50px;
+            height: 50px;
+            background-color:yellow;
+            display:none;
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+            var stop = false;
+            var timer = null;
+            var toTop = document.getElementsByClassName('toTop')[0];
+            var clientHeight = document.documentElement.clientHeight;
+            window.onscroll = function () {
+                var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+                if(scrollTop>clientHeight/2) {
+                    toTop.style.display = 'block';
+                }else {
+                    toTop.style.display = 'none';
+                }
+                //主要用于判断当点击回到顶部按钮后 滚动条在回滚过程中，若手动滚动滚动条，则清除定时器
+                if(stop) {
+                    clearInterval(timer);
+                }
+                stop = true;
+
+            };
+            toTop.onclick = function () {
+                    timer=setInterval(function () {
+                        var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+                        var speed = Math.floor(-scrollTop/6);
+                        document.documentElement.scrollTop= document.body.scrollTop = scrollTop+speed;
+                        stop = false;//用于阻止滚动事件清除定时器
+                        if(scrollTop==0) {
+                           clearInterval(timer);
+                        }
+
+                },30);
+            };
+        };
+
+    </script>
+</head >
+<body style='height:3000px;'>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<p>2345</p>
+<a href='javascript:;' class="toTop"></a>
+</body>
+</html>
